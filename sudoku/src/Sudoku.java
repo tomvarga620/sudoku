@@ -1,4 +1,4 @@
-public class Sudoku {
+public class Sudoku implements SudokuRules {
 
     private int[][] board;
 
@@ -54,7 +54,6 @@ public class Sudoku {
         return !(checkRow(row, num)  ||  checkCol(col, num)  ||  check3x3(row, col, num));
     }
 
-
     public boolean solveSudoku(){
         for(int i=0;i<9;i++){
             for(int j=0;j<9;j++){
@@ -71,8 +70,7 @@ public class Sudoku {
                     }return false;
                 }
             }
-        }
-        return true;
+        }return true;
     }
 
     public void printResutl(){
